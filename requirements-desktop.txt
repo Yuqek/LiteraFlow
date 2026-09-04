@@ -1,0 +1,4 @@
+-r requirements.txt
+cryptography>=42,<46
+keyring>=25,<26
+flet-audio==0.1.0

@@ -1,0 +1,45 @@
+[project]
+name = "literaflow"
+version = "0.8.0"
+description = "CAT-среда для перевода художественных новелл"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {text = "MIT"}
+authors = [{name = "LiteraFlow contributors"}]
+dependencies = [
+  "flet==0.28.3",
+  "pymorphy3==2.0.6",
+  "pymorphy3-dicts-ru==2.4.417150.4580142",
+  "pyspellchecker==0.9.0",
+]
+
+[tool.flet]
+org = "app.literaflow"
+product = "LiteraFlow"
+company = "LiteraFlow contributors"
+copyright = "Copyright (c) 2026 LiteraFlow contributors"
+build_number = 1
+
+[tool.flet.app]
+path = "."
+module = "main"
+exclude = ["test_*", "docs", ".github"]
+
+[tool.flet.android]
+adaptive_icon_background = "#111419"
+split_per_abi = false
+
+[tool.flet.android.permission]
+"android.permission.INTERNET" = true
+
+[tool.flet.splash]
+color = "#F4F1EB"
+dark_color = "#111419"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 140
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]
